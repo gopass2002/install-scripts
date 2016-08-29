@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -x
+
 BASE_DIR=$(echo ~)
 INSTALL_DIR=${BASE_DIR}/tools
 TMP_DIR="/tmp/$(basename ${0%.*})-tmp"
@@ -30,14 +30,19 @@ DIR_NAME=`ls ${INSTALL_DIR} | grep jdk`
 
 # make symbolic link
 JAVA_HOME=${HOME}/tools/java
+echo "make symbolic link"
 ln -s ${INSTALL_DIR}/${DIR_NAME} ${JAVA_HOME}
 
 # add environment variable
+echo "register environment variable, add to PATH"
 echo "# for java" >> ${HOME}/.bash_profile
 echo "export JAVA_HOME=${JAVA_HOME}" >> ${HOME}/.bash_profile
 echo "export PATH=\${JAVA_HOME}/bin:\${PATH}" >> ${HOME}/.bash_profile
 
 # clean-up tmp dir
+echo "clean up"
 if [[ -d ${TMP_DIR} ]]; then
     rm -rf ${TMP_DIR}
 fi
+
+echo "done"
