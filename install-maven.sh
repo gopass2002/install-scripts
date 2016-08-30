@@ -11,6 +11,11 @@ fi
 # make tmp dir
 mkdir -p ${TMP_DIR}
 
+# make install dir
+if [[ ! -d ${INSTALL_DIR} ]]; then
+    mkdir -p ${INSTALL_DIR}
+fi
+
 # download package
 BINARY_URL="http://apache.tt.co.kr/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz"
 BINARY_NAME="apache-maven-3.3.9-bin.tar.gz"

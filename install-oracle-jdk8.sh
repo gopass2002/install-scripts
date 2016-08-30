@@ -11,6 +11,11 @@ fi
 # make tmp dir
 mkdir -p ${TMP_DIR}
 
+# make install dir
+if [[ ! -d ${INSTALL_DIR} ]]; then
+    mkdir -p ${INSTALL_DIR}
+fi
+
 # download package
 JAVA_BINARY_URL="http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz"
 JAVA_BINARY_NAME="jdk-8u66-linux-x64.tar.gz"
