@@ -30,7 +30,7 @@ fi
 BINARY_PATH=`ls ${TMP_DIR}/*.tar.gz | grep jdk`
 BINARY_NAME=`basename ${BINARY_PATH}`
 
-tar xzf /tmp/${BINARY_NAME} -C ${HOME}/tools
+tar xzf ${BINARY_PATH} -C ${HOME}/tools
 DIR_NAME=`ls ${INSTALL_DIR} | grep jdk`
 
 # make symbolic link
